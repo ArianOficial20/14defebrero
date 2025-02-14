@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz San Valentín 💖</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            margin-top: 20px;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        .hoja {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 90%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.3);
+        }
+        .hoja img {
+            width: 350px;
+            height: auto;
+            margin-top: 15px;
+            border-radius: 10px;
+        }
+        .boton {
+            background-color: #ff4081;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+        }
+        .boton:hover {
+            background-color: #d63384;
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Feliz San Valentín, mi amor 💖</h1>
+    <button class="boton" onclick="mostrarSiguienteMensaje()">Haz clic para una sorpresa 🎁</button>
+    <div id="hoja" class="hoja">
+        <p id="mensaje"></p>
+        <img id="imagen" src="" alt="Gif de amor">
+    </div>
+    <script>
+        let mensajes = [
+            "Eres mi todo, te amo con locura 💕",
+            "Cada día contigo es un regalo 🎁",
+            "Tu sonrisa ilumina mi mundo 🌟",
+            "Eres el sueño más bonito hecho realidad 💖",
+            "No hay nada más hermoso que estar a tu lado 😍",
+            "Tus abrazos son mi refugio favorito 🤗"
+        ];
+        
+        let gifs = [
+            "https://i.pinimg.com/originals/f8/be/cb/f8becb4e035e206d0dda352e1f9526df.gif",
+            "https://i.pinimg.com/originals/04/6f/84/046f8442cdddff8b800023b9e72bbf44.gif",
+            "https://i.pinimg.com/originals/92/89/33/9289338e75595b1bb81e39cb6ea9e181.gif",
+            "https://i.pinimg.com/originals/4d/90/d6/4d90d6508c4d8c6a65a213ecf49f5f02.gif",
+            "https://i.pinimg.com/originals/97/4e/15/974e158f62ca3a0a5de416cf12c46835.gif",
+            "https://i.pinimg.com/originals/4f/4c/74/4f4c743b8dccdb96fa3850a18bda15cc.gif"
+        ];
+        
+        let indice = 0;
+        
+        function mostrarSiguienteMensaje() {
+            let hoja = document.getElementById("hoja");
+            let mensaje = document.getElementById("mensaje");
+            let imagen = document.getElementById("imagen");
+            
+            mensaje.innerText = mensajes[indice];
+            imagen.src = gifs[indice];
+            
+            hoja.style.display = "flex";
+            
+            indice = (indice + 1) % mensajes.length;
+        }
+    </script>
+</body>
+</html>
